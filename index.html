@@ -1,43 +1,98 @@
+<!-- ───────────────────────────────────────────────────────────────
+     Landon Kea — Personal Bio Page
+     ───────────────────────────────────────────────────────────────
+     A simple, static HTML page hosted on GitHub Pages.
+     No frameworks, no build tools — just raw HTML + CSS.
+
+     PURPOSE:
+     This is my personal "about me" page.  It's a fun, informal
+     bio that shows personality instead of a dry resume.
+
+     HOW IT WORKS:
+     - Single HTML file with embedded CSS (no external stylesheets).
+     - Hosted on GitHub Pages from the root of this repo.
+     - Responsive layout using max-width + auto margins.
+     - Dark theme matching GitHub's dark mode aesthetic.
+     ─────────────────────────────────────────────────────────────── -->
+
+<!-- Tell the browser this is an HTML5 document (not XHTML or HTML4). -->
 <!DOCTYPE html>
+<!-- Open the <html> tag with lang="en" for accessibility / screen readers. -->
 <html lang="en">
+<!-- ── <head> — invisible metadata ────────────────────────────── -->
 <head>
+    <!-- Declare UTF-8 character encoding so emojis and special chars work. -->
     <meta charset="UTF-8">
+    <!-- Tell mobile browsers to use the actual device width (not a fake 980px viewport).
+         Without this, phones would zoom out and show a tiny version of the page. -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- The browser tab title — also used by search engines and link previews. -->
     <title>Landon Kea</title>
+    <!-- ── Embedded CSS ────────────────────────────────────────── -->
+    <!-- Keeping styles inline avoids an extra HTTP request and keeps this
+         a single-file deployment.  The theme is a dark background (GitHub
+         dark mode inspired) with light text and blue accent links. -->
     <style>
+        /* Remove default browser margins/padding on <body>. */
         body {
             margin: 0;
             padding: 0;
+            /* System font stack — uses whatever font the OS provides for best performance. */
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            /* Dark background matching GitHub's #0d1117 (dark mode default). */
             background: #0d1117;
+            /* Light gray text for readability on dark background. */
             color: #c9d1d9;
+            /* 1.7 line-height gives breathing room between lines of text. */
             line-height: 1.7;
         }
+        /* Center the content in a narrow column for readability. */
         .container {
+            /* 720px max-width means the text won't stretch across the whole screen on wide monitors. */
             max-width: 720px;
+            /* Auto margins on left/right center the container horizontally. */
             margin: 0 auto;
+            /* 60px top/bottom padding, 24px left/right padding. */
             padding: 60px 24px;
         }
+        /* Main heading — big and bright white for visual hierarchy. */
         h1 { font-size: 2.5em; color: #f0f6fc; margin-bottom: 8px; }
+        /* Section headings — smaller, blue accent color (#58a6ff = GitHub link blue). */
         h2 { font-size: 1.5em; color: #58a6ff; margin-top: 48px; }
+        /* Sub-headings — white like h1 but smaller. */
         h3 { color: #f0f6fc; margin-top: 36px; }
+        /* Horizontal rule — subtle gray line to separate sections. */
         hr { border: none; border-top: 1px solid #30363d; margin: 48px 0; }
+        /* Add left padding to list items for indentation. */
         ul { padding-left: 24px; }
+        /* Spacing between list items for readability. */
         li { margin-bottom: 8px; }
+        /* Tagline text — smaller, muted gray. */
         .tagline { font-size: 1.1em; color: #8b949e; margin-bottom: 32px; }
+        /* Rumors section — italic and muted gray to indicate "not serious". */
         .rumors { font-style: italic; color: #8b949e; }
         .rumors li { margin-bottom: 6px; }
+        /* Footer — centered, small, muted. */
         .footer { margin-top: 64px; color: #8b949e; font-size: 0.9em; text-align: center; }
+        /* Links — blue accent color, no underline by default. */
         a { color: #58a6ff; }
     </style>
 </head>
+
+<!-- ── <body> — the visible content ──────────────────────────── -->
 <body>
+    <!-- Wrapper div that constrains the content width (see .container CSS above). -->
     <div class="container">
+
+        <!-- ── Hero section ──────────────────────────────────── -->
+        <!-- Main greeting — large "Hey, I'm Landon Kea." headline. -->
         <h1>Hey, I'm Landon Kea.</h1>
+        <!-- Tagline — a one-sentence summary of my personality. -->
         <p class="tagline">
             I collect ideas, skills, hobbies, unfinished side projects, obscure facts, random adventures,
             and the occasional existential crisis after opening 247 browser tabs that all seemed important at the time.
         </p>
+        <!-- Opening paragraph — sets the tone for the rest of the page. -->
         <p>
             Curiosity isn't just part of my personality — it's practically a full-time job.
             If something catches my attention, there's a decent chance I'll disappear down a rabbit hole
@@ -47,8 +102,10 @@
         </p>
         <p>I wouldn't have it any other way.</p>
 
+        <!-- ── Section divider ───────────────────────────────── -->
         <hr>
 
+        <!-- ── "Who is Landon?" section ──────────────────────── -->
         <h2>So... who is Landon?</h2>
         <p>
             I'm someone who believes life is way too interesting to stay in just one lane.
@@ -66,8 +123,10 @@
 
         <hr>
 
+        <!-- ── "Things I Actually Enjoy" section ────────────── -->
         <h2>Things I Actually Enjoy</h2>
         <p>My hobbies make perfect sense to exactly two groups of people: people who crave novelty, and people who have accepted that curiosity is a lifestyle.</p>
+        <!-- An unordered list of hobbies / personality traits.  Each <li> is one item. -->
         <ul>
             <li>Falling into obscure research rabbit holes because one random question deserved an answer.</li>
             <li>Teaching myself completely unnecessary skills simply because they looked fun.</li>
@@ -88,6 +147,7 @@
 
         <hr>
 
+        <!-- ── "My Philosophy" section ───────────────────────── -->
         <h2>My Philosophy</h2>
         <p>
             Stay curious.<br>
@@ -103,6 +163,8 @@
 
         <hr>
 
+        <!-- ── "Highly Disputed Rumors" section ─────────────── -->
+        <!-- This is a humorous section with obviously exaggerated "rumors" about me. -->
         <h2>Highly Disputed Rumors About Me</h2>
         <p class="rumors"><em>The following claims have not been verified by science, history, or anyone's legal department.</em></p>
         <ul class="rumors">
@@ -132,6 +194,7 @@
 
         <hr>
 
+        <!-- ── "The Truth" section (serious closing) ────────── -->
         <h2>The Truth</h2>
         <p>Behind all the jokes is someone who genuinely loves learning.</p>
         <p>Kindness is underrated.</p>
@@ -155,9 +218,15 @@
 
         <hr>
 
+        <!-- ── Footer with link to GitHub ───────────────────── -->
         <div class="footer">
             <p>Find me on <a href="https://github.com/landonkea">GitHub</a></p>
         </div>
+
     </div>
+    <!-- Close the container div. -->
+
 </body>
+<!-- Close the <body> tag. -->
 </html>
+<!-- Close the <html> tag. -->
