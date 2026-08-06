@@ -28,6 +28,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- The browser tab title — also used by search engines and link previews. -->
     <title>Landon Kea</title>
+    <!-- WHAT: A short summary search engines show under the title in results.
+         WHY: Without this, Google falls back to grabbing a random snippet of
+         body text, which usually looks worse than a deliberate one-liner. -->
+    <meta name="description" content="Landon Kea's personal bio — a curious builder who collects skills, side projects, and the occasional existential crisis.">
+    <!-- WHAT: Open Graph tags control how this page looks when shared as a link
+         on sites like Slack, Discord, iMessage, or social media.
+         HOW: These specific tags (og:title/og:description/og:type/og:url) are
+         the ones link-preview crawlers look for; without them the preview
+         card falls back to a plain, unstyled title-only link.
+         WHY: Keeps the shared-link preview intentional instead of whatever
+         the crawler happens to scrape. -->
+    <meta property="og:title" content="Landon Kea">
+    <meta property="og:description" content="A curious builder who collects skills, side projects, and the occasional existential crisis.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://landonkea.github.io/landonkea-bio/">
+    <!-- WHAT: Browser tab icon, encoded directly as a data URI (a rocket emoji
+         rendered as an SVG).
+         WHY: Keeps the "single HTML file, no extra assets" deployment model —
+         no separate favicon.ico/.png file to add or host. -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🚀</text></svg>">
     <!-- ── Embedded CSS ────────────────────────────────────────── -->
     <!-- Keeping styles inline avoids an extra HTTP request and keeps this
          a single-file deployment.  The theme is a dark background (GitHub
